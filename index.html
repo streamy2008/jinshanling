@@ -1,0 +1,1688 @@
+<!-- Design System -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#131313",
+              "on-secondary-container": "#c0bfbf",
+              "primary-container": "#454747",
+              "surface-tint": "#c6c6c7",
+              "primary": "#c6c6c7",
+              "surface-container-highest": "#252626",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#1f2020",
+              "on-tertiary-container": "#624604",
+              "on-primary": "#3f4041",
+              "secondary-fixed": "#e3e2e2",
+              "secondary": "#9e9e9e",
+              "inverse-surface": "#fcf8f8",
+              "inverse-primary": "#5e5f60",
+              "on-error": "#490106",
+              "primary-fixed-dim": "#d4d4d4",
+              "on-primary-container": "#d0d0d0",
+              "on-secondary-fixed-variant": "#5b5b5c",
+              "surface-container-high": "#1f2020",
+              "on-tertiary": "#6b4f0e",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "secondary-dim": "#9e9e9e",
+              "surface-variant": "#252626",
+              "on-tertiary-fixed": "#4a3400",
+              "error-dim": "#bb5551",
+              "secondary-container": "#3b3b3c",
+              "tertiary-fixed-dim": "#ecc479",
+              "error-container": "#7f2927",
+              "outline-variant": "#484848",
+              "tertiary": "#ffe2af",
+              "on-secondary-fixed": "#3e3f40",
+              "background": "#0e0e0e",
+              "error": "#ee7d77",
+              "on-error-container": "#ff9993",
+              "tertiary-container": "#fbd185",
+              "tertiary-fixed": "#fbd185",
+              "inverse-on-surface": "#565554",
+              "tertiary-dim": "#ecc479",
+              "secondary-fixed-dim": "#d5d4d4",
+              "surface-container": "#191a1a",
+              "on-primary-fixed": "#3e4040",
+              "on-surface-variant": "#acabaa",
+              "on-primary-fixed-variant": "#5a5c5c",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-background": "#e7e5e4",
+              "primary-fixed": "#e2e2e2",
+              "on-surface": "#e7e5e4",
+              "on-tertiary-fixed-variant": "#6c500f",
+              "primary-dim": "#b8b9b9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #e7e5e4;
+            overflow-x: hidden;
+        }
+        /* Custom scrollbar for premium feel */
+        ::-webkit-scrollbar { width: 4px; }
+        ::-webkit-scrollbar-track { background: #0e0e0e; }
+        ::-webkit-scrollbar-thumb { background: #484848; }
+    </style>
+</head>
+<body class="font-body selection:bg-tertiary/30">
+<!-- Top Navigation Bar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl flex justify-between items-center px-12 py-8 w-full">
+<div class="font-['Noto_Serif'] text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex gap-12">
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#ffe2af] font-medium transition-colors duration-500" href="#">Four Seasons</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Contact</a>
+</div>
+<button class="md:hidden text-on-surface">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</nav>
+<!-- Side Navigation Shell (Suppressed for Detail View to prioritize focus) -->
+<main class="min-h-screen pt-24 pb-16 px-6 md:px-12 lg:px-24">
+<!-- Back Action -->
+<div class="mb-12">
+<a class="group inline-flex items-center gap-4 text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">
+<span class="material-symbols-outlined text-lg">arrow_back</span>
+<span class="font-['Inter'] text-[0.6875rem] tracking-widest uppercase">Back to Gallery</span>
+</a>
+</div>
+<!-- Main Content Grid -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start">
+<!-- Hero Photo Canvas -->
+<div class="lg:col-span-8 relative group">
+<div class="bg-surface-container-lowest overflow-hidden">
+<img alt="Winter Landscape" class="w-full aspect-[4/5] md:aspect-square lg:aspect-[3/4] object-cover grayscale-0 hover:scale-[1.02] transition-transform duration-[600ms] ease-out" data-alt="Solitary snow-covered mountain peak against deep blue sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBzSGeuVUSvZ-w_XP9yfz_SzJskPfk6Hbu7iiE7P3CZszxQHjU4XnfRGTt1M-bk3v_-w9JVHc_YFdMLUtcKFsJnpSsZbRKK-T9WHFBg4Aeo2z2uA9zvAHy-g6OHq8MbqjkHPVrlSmLu9WXr9tOdIerl5D6wn8U459pbLqHKOQrHDMgvvVLLkJ5O8C0ShGMeU2iGqstrl7QMGXVVC3rUiKnnxmXPXyfP7RPMzn4SqnsGJjj5gOj4s3RVcb5OntGzZA2r5sXfVhyWXFc"/>
+</div>
+<!-- Floating Nav Arrows -->
+<div class="absolute inset-y-0 left-0 right-0 flex justify-between items-center px-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none">
+<button class="pointer-events-auto w-12 h-12 bg-[#0e0e0e]/40 backdrop-blur-md flex items-center justify-center hover:bg-primary transition-colors duration-300 group/btn">
+<span class="material-symbols-outlined text-[#e7e5e4] group-hover/btn:text-on-primary">chevron_left</span>
+</button>
+<button class="pointer-events-auto w-12 h-12 bg-[#0e0e0e]/40 backdrop-blur-md flex items-center justify-center hover:bg-primary transition-colors duration-300 group/btn">
+<span class="material-symbols-outlined text-[#e7e5e4] group-hover/btn:text-on-primary">chevron_right</span>
+</button>
+</div>
+</div>
+<!-- Metadata & Story Panel -->
+<div class="lg:col-span-4 space-y-12">
+<header>
+<h1 class="font-headline text-5xl lg:text-6xl tracking-tight text-on-surface mb-4 leading-tight">Winter Solstice in the Alps</h1>
+<p class="font-body text-sm tracking-wide text-on-surface-variant leading-relaxed opacity-80">
+                        Captured during the blue hour at the peak of Mount Pilatus. The silence of the snowfall was profound, creating a monochromatic world where time seemed to suspend itself. This frame represents the isolation and purity of the winter season.
+                    </p>
+</header>
+<!-- Metadata Ribbon (Custom Component) -->
+<div class="bg-surface-container-low p-8 space-y-6">
+<div class="grid grid-cols-2 gap-y-8">
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">Camera</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">Leica M11</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">Lens</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">Summilux 35mm f/1.4</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">Aperture</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">f/5.6</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">Shutter</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">1/250s</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">ISO</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">64</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] tracking-[0.2em] uppercase text-outline mb-1">Date</span>
+<span class="block font-label text-xs tracking-widest text-on-surface">Dec 21, 2023</span>
+</div>
+</div>
+</div>
+<!-- Location Map Suggestion -->
+<div class="bg-surface-container h-32 w-full flex items-center justify-center grayscale opacity-50 border border-outline-variant/10">
+<div class="text-center">
+<span class="material-symbols-outlined block mb-2 text-outline">location_on</span>
+<span class="font-label text-[0.625rem] tracking-[0.1em] uppercase text-on-surface-variant" data-location="Swiss Alps">Swiss Alps, Switzerland</span>
+</div>
+</div>
+<!-- CTA -->
+<button class="w-full bg-primary py-5 text-on-primary font-label text-[0.6875rem] tracking-[0.2em] uppercase font-bold hover:bg-primary-dim transition-colors duration-300">
+                    Inquire About Print
+                </button>
+</div>
+</div>
+<!-- Related Content: "More from Winter" -->
+<section class="mt-32">
+<div class="flex items-center justify-between mb-12">
+<h2 class="font-headline text-2xl tracking-tighter">More from Winter</h2>
+<div class="h-[1px] flex-grow mx-8 bg-outline-variant/20"></div>
+<a class="font-label text-[0.6875rem] tracking-widest uppercase text-tertiary" href="#">View Collection</a>
+</div>
+<div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+<div class="aspect-square bg-surface-container-low overflow-hidden group cursor-pointer">
+<img alt="Winter 02" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Abstract close-up of frost patterns on glass" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCzx-6yBjuXuHdHpi6Eg89Ag4UnS9AFZ8UCu0g9c5kXPRs-ZWpqw0tboCrvVXxwR0vWkDlQsC5tlkQKw6lt8mQi34Ni4zOgvYLvF7YrCzs0lFGxQS7Y5SY56HeONN7o3eQN6aoSZQzOm2WGmuIfqQYRW8P3I1z3UXiinN28-KHNRPjpzVsHShLEDT8nbKzW4yhfomGnZvGOrf6Mux3ckaWbVs5Ch4wfmbxFwgqyt5GaV7FKiLeO76lX_p-3shxbCpTREtFifZp7d68"/>
+</div>
+<div class="aspect-square bg-surface-container-low overflow-hidden group cursor-pointer">
+<img alt="Winter 03" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Snow covered trees in a misty forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDGJMvQjugDbYjbbyNWQxipwAuwcqKF3naL6K288IJDrb9enzxnD-6_lqFYsxwsGh3iTNyCYioNQ1syQQlL6h3KRUbI9VnHaelZsy5NKNjblOxI6X5NmYPS1u95qKoUYg1-ALKtW4iwRKNZRt5WUkirJxOCHctPDNVtUbPHfhctgFKhKBYYcY03ArM-_7RWGAomAV1eR0MX7u50Yjqtubih1HN2fBJmKjB66B8XXEoGykEEZjdZFoUDUV79qf3SncPaqBDuQT-iZmU"/>
+</div>
+<div class="aspect-square bg-surface-container-low overflow-hidden group cursor-pointer">
+<img alt="Winter 04" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="A frozen lake reflecting a pale winter sun" src="https://lh3.googleusercontent.com/aida-public/AB6AXuALok-z6_Goo117_qG3zRWzYuhjkgopYx2UkaU16035rVcdaby7EGq3mi_m1crVDwWi-PWWesSeEJciBh8e2fEOb7uJzTq2qK1OLtHLi_1MMWrPjsQBY84ufEctDg_BGp7SbzvYCBRcVcs_3njgcxmBdvy_fKuGVjwRSe7IGo1cH6iBBKJ-59SX2_KQbKrMrt_L02xufW3VnjXnsoo2a7dWSkDMS-MqkoCV3j_Fm1nwPM8KSvUbcgunC6G7HKtrK6ZhSsyi1tt0d-I"/>
+</div>
+<div class="aspect-square bg-surface-container-low overflow-hidden group cursor-pointer">
+<img alt="Winter 05" class="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" data-alt="Small wooden cabin buried in deep snow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCBYSpGKm2vlQRy-4xmAfyT-P3x5AJA5tRQznNhazxlO3y6smPQbAg9zhm-adkYQxkupAGLsZDc7p2ppPOXbhIUwbKzpVAtQX7hSSQbcorICYJCzupBPxqvr9SvPu0NLTQPGiBOZhCpHs1F2U7aAWi2Efhz-OcljZ4VvrqZYqSnuVrcuamRCEWilH-ZbFE6ndARIMI8zbKXwPE_zeGNvPD-nNfQfYgyuEGU0M_20LI2tNCakW4qcA6Kvrl95UqDDZ2Dc1I-U3oIWJE"/>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-16 flex flex-col items-center space-y-4 max-w-7xl mx-auto">
+<div class="flex gap-8 mb-4">
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#acabaa] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#acabaa] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#acabaa] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Vogue Portfolio</a>
+</div>
+<div class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] uppercase">© Sean Image</div>
+</footer>
+<!-- Mobile Navigation Bar (Fixed Bottom) -->
+<nav class="md:hidden fixed bottom-0 left-0 w-full bg-[#131313] z-40 flex justify-around py-4">
+<div class="flex flex-col items-center text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined text-lg">eco</span>
+<span class="font-['Inter'] text-[0.625rem] tracking-widest uppercase mt-1">Spring</span>
+</div>
+<div class="flex flex-col items-center text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined text-lg">sunny</span>
+<span class="font-['Inter'] text-[0.625rem] tracking-widest uppercase mt-1">Summer</span>
+</div>
+<div class="flex flex-col items-center text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined text-lg">leaf_spark</span>
+<span class="font-['Inter'] text-[0.625rem] tracking-widest uppercase mt-1">Autumn</span>
+</div>
+<div class="flex flex-col items-center text-[#ffe2af] after:content-[''] after:block after:w-1 after:h-1 after:bg-[#ffe2af] after:rounded-full after:mx-auto">
+<span class="material-symbols-outlined text-lg">ac_unit</span>
+<span class="font-['Inter'] text-[0.625rem] tracking-widest uppercase mt-1">Winter</span>
+</div>
+</nav>
+</body></html>
+
+<!-- Photo Detail - Sean Image -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#131313",
+              "on-secondary-container": "#c0bfbf",
+              "primary-container": "#454747",
+              "surface-tint": "#c6c6c7",
+              "primary": "#c6c6c7",
+              "surface-container-highest": "#252626",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#1f2020",
+              "on-tertiary-container": "#624604",
+              "on-primary": "#3f4041",
+              "secondary-fixed": "#e3e2e2",
+              "secondary": "#9e9e9e",
+              "inverse-surface": "#fcf8f8",
+              "inverse-primary": "#5e5f60",
+              "on-error": "#490106",
+              "primary-fixed-dim": "#d4d4d4",
+              "on-primary-container": "#d0d0d0",
+              "on-secondary-fixed-variant": "#5b5b5c",
+              "surface-container-high": "#1f2020",
+              "on-tertiary": "#6b4f0e",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "secondary-dim": "#9e9e9e",
+              "surface-variant": "#252626",
+              "on-tertiary-fixed": "#4a3400",
+              "error-dim": "#bb5551",
+              "secondary-container": "#3b3b3c",
+              "tertiary-fixed-dim": "#ecc479",
+              "error-container": "#7f2927",
+              "outline-variant": "#484848",
+              "tertiary": "#ffe2af",
+              "on-secondary-fixed": "#3e3f40",
+              "background": "#0e0e0e",
+              "error": "#ee7d77",
+              "on-error-container": "#ff9993",
+              "tertiary-container": "#fbd185",
+              "tertiary-fixed": "#fbd185",
+              "inverse-on-surface": "#565554",
+              "tertiary-dim": "#ecc479",
+              "secondary-fixed-dim": "#d5d4d4",
+              "surface-container": "#191a1a",
+              "on-primary-fixed": "#3e4040",
+              "on-surface-variant": "#acabaa",
+              "on-primary-fixed-variant": "#5a5c5c",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-background": "#e7e5e4",
+              "primary-fixed": "#e2e2e2",
+              "on-surface": "#e7e5e4",
+              "on-tertiary-fixed-variant": "#6c500f",
+              "primary-dim": "#b8b9b9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        .masonry-item:nth-child(3n) { grid-row: span 2; }
+        .masonry-item:nth-child(4n) { grid-row: span 1.5; }
+        body { scroll-behavior: smooth; }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary-fixed">
+<!-- Shared Component: TopNavBar -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl flex justify-between items-center px-12 py-8 w-full">
+<div class="font-['Noto_Serif'] text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#ffe2af] font-medium transition-colors duration-500" href="#">Four Seasons</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary text-3xl">menu</span>
+</div>
+</nav>
+<!-- Shared Component: SideNavBar -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-20 z-40 bg-[#131313] docked left-0 h-full w-20 hidden lg:flex">
+<div class="mb-12">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">filter_vintage</span>
+</div>
+</div>
+<div class="flex flex-col space-y-12 flex-1 justify-center">
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">eco</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Spring</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">sunny</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Summer</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">leaf_spark</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Autumn</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">ac_unit</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Winter</span>
+</button>
+</div>
+</aside>
+<!-- Hero Section -->
+<section class="relative h-screen w-full flex items-center justify-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0 opacity-80">
+<img class="w-full h-full object-cover scale-105" data-alt="A misty morning landscape showing the transition between seasons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPmIDPOEEhqKAMJ2QJsO3HpKLymPBoFDA1WPgDZLMArnwZt5X-SX99EsUiO7mlqGNSQEDfzzzxq_7MRPVhB6csOLz0FC26SAhnNWdUNd84CIgjmPfXbIVEZxNlgyQwylIxTGwqxo8YKf42Mlv87SX7q5a_arwyCzJqnN6UuPORKetbhK-HPOxCVvTStxPPSYYtJpk5WH0pMxh6rPwrzGt2LPXUOVUf-gmneuRs7Uke0uuGhffHQUPgHQ2GlxAfmt_b3LN_blt9cY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-transparent via-background/20 to-background"></div>
+</div>
+<div class="relative z-10 text-center px-6">
+<span class="font-body text-label text-tertiary tracking-[0.4em] uppercase text-xs mb-6 block">Editorial Collection</span>
+<h1 class="font-headline text-5xl md:text-8xl lg:text-9xl text-on-surface tracking-tighter leading-none mb-12">
+                Four Seasons <br/> <span class="italic font-light opacity-80 text-4xl md:text-6xl">by Sean Image</span>
+</h1>
+<a class="inline-flex items-center space-x-4 bg-primary text-on-primary px-10 py-5 font-label tracking-widest text-xs uppercase hover:bg-primary-dim transition-colors duration-500" href="#gallery">
+<span>View the Collection</span>
+<span class="material-symbols-outlined">arrow_downward</span>
+</a>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="relative z-10 lg:pl-20" id="gallery">
+<!-- Section Header -->
+<header class="max-w-7xl mx-auto px-12 pt-32 pb-20">
+<div class="flex flex-col md:flex-row justify-between items-end gap-8">
+<div class="max-w-xl">
+<h2 class="font-headline text-4xl mb-6 text-on-surface">The Cycle of Light</h2>
+<p class="text-on-surface-variant font-body leading-relaxed text-lg">
+                        A two-year study capturing the ephemeral shifts of the Nordic landscape. From the first thaw of April to the deep silence of January, these images represent the patient observation of nature's relentless rhythm.
+                    </p>
+</div>
+<div class="flex space-x-8 text-on-surface-variant font-label text-[10px] tracking-[0.3em] uppercase">
+<div class="flex flex-col">
+<span class="text-outline mb-2">Location</span>
+<span class="text-on-surface">Lofoten, Norway</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline mb-2">Format</span>
+<span class="text-on-surface">Medium Format Digital</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Gallery Grid (Asymmetric Bento Style) -->
+<section class="max-w-7xl mx-auto px-12 pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+<!-- Large Featured Item -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[4/5] md:aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Dramatic autumn mountain peaks with golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYgUtfHKXwB8zVfm1E_x9qJOanV5ogl3UjRXf0odcw9iFXmlkSVORdxVHpGQisXBKfwXu2fulVo4ak-qVpS-Uv33ahVHi6nIIAAL0WFz5xuiZS3eiwN25ssVH3SQBodMtL158sP1YYKT0ejtfUTqBXf6i5I6lw-Hs3LT62v2xYmqzxJfaPMRs1pbS0jSMTAOtBCxWwjHlDD2l2nyAnPX6JV7emVTGNlo_IGxRjRkj4g4iHG4wpOhcYu8yDtT-iNBrcHymnCux0lY"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 backdrop-blur-sm">
+<div class="flex justify-between items-end">
+<div>
+<span class="text-tertiary text-[10px] tracking-widest uppercase mb-2 block">Autumn</span>
+<h3 class="font-headline text-2xl text-on-surface mb-4">The Golden Hour Summit</h3>
+</div>
+<div class="flex gap-4 text-[10px] text-on-surface-variant font-label tracking-tighter bg-surface-container-low/80 px-4 py-2">
+<span>f/8.0</span>
+<span>1/125s</span>
+<span>ISO 200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Item -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="h-full aspect-[3/4] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Snow covered mountain under a starlit winter sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR3NWjJ1OuGZKYv6NtJUfrBjPLO09kgeDRUADjeNn2QXOfDTRnVZFjAF5LXm_aixm3lL5372usIyi9HWJvRmy9OmCNe0UtiJyD_wVVY4R3FTRMmie63OT6Ftwam85uhcPxt37b7mvpft28PENYyR0mBX0ykcRCBa3Bg4T1cWNjgagNmLlqMT0HrSzvUUMzUQlpHYfzJd9jiBn897OgWP1mUwqUcPruJKoZILuOOd0xYoXrCqZnnEQseAWiYMWPe9rPdfimJ48HaU4"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[10px] tracking-widest uppercase mb-2 block">Winter</span>
+<h3 class="font-headline text-2xl text-on-surface">Celestial Frost</h3>
+</div>
+</div>
+<!-- Three Column Row -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Vibrant spring flowers in a wild meadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2MQxySSBgMIVKbPnpIVF3txsWMdNJdczFtU-gwTrBe_lTfoGPT28K6k6h5Az7fx-Hbyi7rH5X3lHZtwDZy5tuWtvaQvKGtI12rs30bXMZAyuKbJE4nUto2HvtmXCdLuHeR2XM81oBHyvGiOhsWn0aAa299IcECmwxZlFw2T8SfkWUZMv9c1VJSBhzF-at7TzbU-TOtixoV4tUmtdmr9Q6_JdLZNftj0pdinElTLUncgVfPM8tM5O3HE2FJZLgxmc1J8GpLRFF1g"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[10px] tracking-widest uppercase mb-2 block">Spring</span>
+<h3 class="font-headline text-xl text-on-surface">The Awakening</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Deep green summer forest with sunlight streaming through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6VBqR00vBOi3Zk7UpYlF1r0SyfLXuNFDbCBx00Jq1lcBc4tgcFa9Y8XnmfP05IZ0NBDKxTbavwM9ZO_VnpyBYJjwuFKmgnxO_FjjxlHIPSkjyGjxqmUlzBsSq7DDcd4iTLgqCcIKhoQi1R7ASe85pNLGYU2vcTT9TvHwllZt7MlKr1Sv6IhFZRn0F9PZvZ19Nuc3yCQQxJUgXI-yFtzbhCTN2f0fDRrZUquYOarq3shoa45SM4PDWSyapPmVLPEh50ySa3WSuCrk"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[10px] tracking-widest uppercase mb-2 block">Summer</span>
+<h3 class="font-headline text-xl text-on-surface">Solstice Green</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Reflective lake surface mirroring autumn foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJdU3-eBEhEgNggu-GMbl74D5Q9saWsIZZcpigcQ8uydAawquXpWZtnq7bb5-Kaa5oJu9Xpm2OMf0NMS_fSd_d2v489_7AZHOEOz_QL9t4fCgVQG5ld2QYkPPlrr4X-FhTTJt7mhnb3vMhgMqnhL4sDxkyJlqmk-6qWPQT9927KUJYAREi0hhGeqDUZX8j2W__PMfUDF1rz8QLewJVCM-2j_EAJqDXMTmjO91uXodhxI1kOdbgsXMJlS0SmoXxkhKbm-044Q2Ko8"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[10px] tracking-widest uppercase mb-2 block">Autumn</span>
+<h3 class="font-headline text-xl text-on-surface">Glass Silence</h3>
+</div>
+</div>
+<!-- Wide Panoramic -->
+<div class="md:col-span-12 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Wide panorama of misty mountain ranges at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2inlPbBdLZeHTu5lcPe4fNezYqpzbxpKmipOggP-rswJjpZzx-uzq9Rfe1v6_wdZTZtZpaVfE4WZhnKF7Al7SNREod-hlYZAN4Y13o5t_4yH9fS-Aql6EvwhLP1m4bSiWR-INSDw5bLAKWfKlfbhOHTUBfDy4NiL0UD9-fMQEuKHheDSE3-hZiLGdQiyfTCyGEqFnKAXbd_juTvavMVsUi3k0urYr8txPlWd4RjnBnqgjUu3LPIq910rXRmUmAH-8iLjWLtV9a3o"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-12 backdrop-blur-sm">
+<div class="max-w-2xl">
+<span class="text-tertiary text-xs tracking-[0.4em] uppercase mb-4 block">Seasonal Panorama</span>
+<h3 class="font-headline text-4xl text-on-surface mb-6">The Infinite Horizon</h3>
+<div class="flex gap-8 text-[11px] text-on-surface-variant font-label tracking-widest uppercase border-t border-outline-variant/30 pt-6">
+<span>35mm f/11</span>
+<span>1/15s</span>
+<span>ISO 50</span>
+<span>Tripod Mounted</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Signature Component: Metadata Ribbon -->
+<section class="bg-surface-container-low py-12 px-12 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-wrap justify-between items-center gap-8">
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-tertiary">camera</span>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Technical Specifications</span>
+</div>
+<div class="flex flex-wrap gap-12 font-label text-[10px] tracking-[0.2em] uppercase text-on-surface">
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Body</span>
+<span>Phase One XF</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Lens</span>
+<span>Schneider 80mm LS</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Color</span>
+<span>DCI-P3 Tuned</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Print</span>
+<span>Hahnemühle Photo Rag</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About/CTA Section -->
+<section class="py-32 px-12">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="font-headline text-3xl mb-8">Bring the Seasons into Your Space</h3>
+<p class="text-on-surface-variant text-lg leading-relaxed mb-12">
+                    Limited edition archival pigment prints are available for each piece in this collection. Each print is numbered, signed, and accompanied by a certificate of authenticity.
+                </p>
+<div class="flex flex-col sm:flex-row justify-center gap-6">
+<button class="bg-primary text-on-primary px-12 py-5 font-label tracking-widest text-xs uppercase hover:bg-primary-dim transition-all">Order Inquiries</button>
+<button class="border border-outline-variant/30 text-on-surface px-12 py-5 font-label tracking-widest text-xs uppercase hover:bg-surface-container-high transition-all">Download Catalog</button>
+</div>
+</div>
+</section>
+<!-- Shared Component: Footer -->
+<footer class="bg-[#0e0e0e] w-full py-16 flex flex-col items-center space-y-4 max-w-7xl mx-auto border-t border-outline-variant/10">
+<div class="flex space-x-12 mb-8">
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Vogue Portfolio</a>
+</div>
+<div class="text-[#acabaa] font-['Inter'] text-[0.6875rem] tracking-widest uppercase">
+                © Sean Image
+            </div>
+</footer>
+</main>
+<!-- Contextual FAB (Hidden on Mobile) -->
+<div class="fixed bottom-12 right-12 z-50 hidden md:block">
+<button class="w-14 h-14 bg-tertiary text-on-tertiary-fixed rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</body></html>
+
+<!-- Sean Image - Four Seasons (Home/Gallery) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            "surface-container-low": "#131313",
+            "on-secondary-container": "#c0bfbf",
+            "primary-container": "#454747",
+            "surface-tint": "#c6c6c7",
+            "primary": "#c6c6c7",
+            "surface-container-highest": "#252626",
+            "surface-container-lowest": "#000000",
+            "on-secondary": "#1f2020",
+            "on-tertiary-container": "#624604",
+            "on-primary": "#3f4041",
+            "secondary-fixed": "#e3e2e2",
+            "secondary": "#9e9e9e",
+            "inverse-surface": "#fcf8f8",
+            "inverse-primary": "#5e5f60",
+            "on-error": "#490106",
+            "primary-fixed-dim": "#d4d4d4",
+            "on-primary-container": "#d0d0d0",
+            "on-secondary-fixed-variant": "#5b5b5c",
+            "surface-container-high": "#1f2020",
+            "on-tertiary": "#6b4f0e",
+            "surface-bright": "#2c2c2c",
+            "outline": "#767575",
+            "secondary-dim": "#9e9e9e",
+            "surface-variant": "#252626",
+            "on-tertiary-fixed": "#4a3400",
+            "error-dim": "#bb5551",
+            "secondary-container": "#3b3b3c",
+            "tertiary-fixed-dim": "#ecc479",
+            "error-container": "#7f2927",
+            "outline-variant": "#484848",
+            "tertiary": "#ffe2af",
+            "on-secondary-fixed": "#3e3f40",
+            "background": "#0e0e0e",
+            "error": "#ee7d77",
+            "on-error-container": "#ff9993",
+            "tertiary-container": "#fbd185",
+            "tertiary-fixed": "#fbd185",
+            "inverse-on-surface": "#565554",
+            "tertiary-dim": "#ecc479",
+            "secondary-fixed-dim": "#d5d4d4",
+            "surface-container": "#191a1a",
+            "on-primary-fixed": "#3e4040",
+            "on-surface-variant": "#acabaa",
+            "on-primary-fixed-variant": "#5a5c5c",
+            "surface": "#0e0e0e",
+            "surface-dim": "#0e0e0e",
+            "on-background": "#e7e5e4",
+            "primary-fixed": "#e2e2e2",
+            "on-surface": "#e7e5e4",
+            "on-tertiary-fixed-variant": "#6c500f",
+            "primary-dim": "#b8b9b9"
+          },
+          fontFamily: {
+            "headline": ["Noto Serif"],
+            "body": ["Inter"],
+            "label": ["Inter"]
+          },
+          borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+        },
+      },
+    }
+  </script>
+<style>
+    .material-symbols-outlined {
+      font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+    }
+    body {
+      background-color: #0e0e0e;
+      color: #e7e5e4;
+      font-family: 'Inter', sans-serif;
+    }
+    .serif-title {
+      font-family: 'Noto Serif', serif;
+    }
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+  </style>
+</head>
+<body class="bg-background text-on-surface selection:bg-tertiary selection:text-on-tertiary-fixed">
+<!-- TopNavBar Navigation Shell -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl flex justify-between items-center px-12 py-8 w-full">
+<div class="font-['Noto_Serif'] text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex space-x-12">
+<a class="text-[#ffe2af] font-medium font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm transition-colors duration-500" href="#">Four Seasons</a>
+<a class="text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500 font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm" href="#">Gallery</a>
+<a class="text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500 font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm" href="#">About</a>
+<a class="text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500 font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm" href="#">Contact</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</nav>
+<!-- SideNavBar Navigation Shell -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-20 z-40 bg-[#131313] w-20 hidden md:flex">
+<div class="mb-24 flex flex-col items-center">
+<div class="font-['Noto_Serif'] text-lg text-[#e7e5e4] rotate-180 [writing-mode:vertical-lr] mb-8">Four Seasons</div>
+</div>
+<div class="flex flex-col space-y-12 items-center">
+<div class="group cursor-pointer flex flex-col items-center">
+<span class="material-symbols-outlined text-[#acabaa] group-hover:text-[#e7e5e4] transition-all duration-700 group-hover:scale-110">eco</span>
+<span class="font-['Inter'] text-[0.5rem] tracking-widest uppercase mt-2 text-[#acabaa]">Spring</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center">
+<span class="material-symbols-outlined text-[#acabaa] group-hover:text-[#e7e5e4] transition-all duration-700 group-hover:scale-110">sunny</span>
+<span class="font-['Inter'] text-[0.5rem] tracking-widest uppercase mt-2 text-[#acabaa]">Summer</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center">
+<span class="material-symbols-outlined text-[#acabaa] group-hover:text-[#e7e5e4] transition-all duration-700 group-hover:scale-110">leaf_spark</span>
+<span class="font-['Inter'] text-[0.5rem] tracking-widest uppercase mt-2 text-[#acabaa]">Autumn</span>
+</div>
+<div class="group cursor-pointer flex flex-col items-center">
+<span class="material-symbols-outlined text-[#acabaa] group-hover:text-[#e7e5e4] transition-all duration-700 group-hover:scale-110">ac_unit</span>
+<span class="font-['Inter'] text-[0.5rem] tracking-widest uppercase mt-2 text-[#acabaa]">Winter</span>
+</div>
+</div>
+</aside>
+<!-- Main Canvas -->
+<main class="md:pl-20 pt-32 pb-24">
+<!-- Header Section -->
+<header class="max-w-7xl mx-auto px-8 md:px-16 mb-24">
+<div class="max-w-3xl">
+<h1 class="text-6xl md:text-8xl serif-title font-bold tracking-tight text-on-surface mb-8">The Four Seasons</h1>
+<p class="text-on-surface-variant font-body text-lg leading-relaxed max-w-2xl">
+          An editorial exploration of light, texture, and the transient nature of our world. This collection documents the rhythmic shift of the earth through the lens of high-fashion cinematography.
+        </p>
+</div>
+</header>
+<!-- Category Grid: Asymmetric Bento Style -->
+<section class="max-w-7xl mx-auto px-8 md:px-16">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8 md:gap-4 h-auto md:h-[1200px]">
+<!-- Spring Tile -->
+<div class="md:col-span-7 md:row-span-1 group relative overflow-hidden bg-surface-container-lowest transition-all duration-700">
+<img alt="Spring Awakening" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-[1200ms] ease-out" data-alt="Soft focused bright flowers in spring morning light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCg3Ate2m-SLtmdGClkkUPHfpF74b2UnHxiH5kxKSl9muC5Vy77HG9Z5DguBBcg7qd9p2XmRr57_fmEmLFwYb3Ya18PC42DB5eaxvdbgNYtq4iSjgCXjBvg0Fa1RLqFXIfxMdgvFvjJAThYg6LdCvMHD0HZfBXvWQFehaoxKEZ_uk95jFonHAq-ljSumdbm5pC_rxz2WVFUAaGNjygzGQq7Tyxz8PQu1U4E0pGGRAc3HXZBumTanRPNm6mSt1Pq2r9Cm-IrJLRGI1c"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-surface-container-lowest/80 to-transparent">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-tertiary mb-2">Collection 01</span>
+<h2 class="serif-title text-4xl md:text-5xl font-bold text-on-surface mb-4">Spring: The Awakening</h2>
+<div class="flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<span class="font-body text-xs tracking-widest uppercase text-on-surface-variant">View Collection</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Summer Tile -->
+<div class="md:col-span-5 md:row-span-2 group relative overflow-hidden bg-surface-container-lowest transition-all duration-700">
+<img alt="Summer Solstice" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-[1200ms] ease-out" data-alt="Vibrant beach at sunset with golden warm lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBkDrrVobdSiUKObqIuBtDdj42R0XzV6JwzJzLms0udLs0My2aiWR0bVyglVcnfae2k-MRQdaTsvX_ybT0LoHG5O3svMKfaV9NzYM2443A0JP0Fs21nOTA3uSLtAZUFsX02VHsPF1BKp_9eNdCB2WMoG3sm6Ttbu5BjDOugPHv1tkWj_FIgV8b4waXR5RB3gqhu9RodnnuSbvPmVk8BE9avr1PKHCkBmIexzPBsX_EdfjUryTUhu9iXLKhtHYQ3snOyKKJrvEt5_VM"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-surface-container-lowest/80 to-transparent">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-tertiary mb-2">Collection 02</span>
+<h2 class="serif-title text-4xl md:text-5xl font-bold text-on-surface mb-4">Summer: The Zenith</h2>
+<div class="flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<span class="font-body text-xs tracking-widest uppercase text-on-surface-variant">View Collection</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Autumn Tile -->
+<div class="md:col-span-7 md:row-span-2 group relative overflow-hidden bg-surface-container-lowest transition-all duration-700">
+<img alt="Autumn Decay" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-[1200ms] ease-out" data-alt="Moody deep orange autumn leaves in a forest" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAan6fJ0SwCZWYiNbEn2qHjHl7GXCys9YunrNzo32GjlSphTvGjAlZNnVaQDpi601q58fiBRYjTxajIgCqcvRYpKzbB5Ui7vxxllUjp2Htnqbwl2I0oW87yq9eay028Fdo2b33wCIYSouGoJfQ3IYIWPTUd_Df83Iu4Hmj7Hqf384zB5RvQzbRHqcxzzDNBP4uqUv5zOHwseK9yfpp0q4KSD_Qc3HQMl0UNdQhRBBp1zUYiVzAO97NM0YZEF-fys2gH_RoRP-gPDcQ"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-surface-container-lowest/80 to-transparent">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-tertiary mb-2">Collection 03</span>
+<h2 class="serif-title text-4xl md:text-5xl font-bold text-on-surface mb-4">Autumn: The Descent</h2>
+<div class="flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<span class="font-body text-xs tracking-widest uppercase text-on-surface-variant">View Collection</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+</div>
+</div>
+<!-- Winter Tile -->
+<div class="md:col-span-5 md:row-span-1 group relative overflow-hidden bg-surface-container-lowest transition-all duration-700">
+<img alt="Winter Silence" class="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-[1200ms] ease-out" data-alt="Minimalist snow landscape with stark dark trees" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBaG_A07j49BL388w8fdK4rdOL5CB6hO6gHOymdCYfq6YttVDt5nVzLOtTD5zOWPP0Uga-h1KiOwq5GnXASz4KVy5IWhTiUSAWydcs8jR73Q98SQyd-HYd2GGZa69TPrdfaMZL7Ch1PVexPCTJDuphZ_RD3dlGaom9LhiGhuxN90rOaxRjKgOAqCTvMdfTsyBln72xxrNrf3aapzzkDVWUPx86WcII1-WmhDOP951hmDuFxM_9snLQA2aJmGLLTUCAybmDpAx-sR2c"/>
+<div class="absolute inset-0 p-12 flex flex-col justify-end bg-gradient-to-t from-surface-container-lowest/80 to-transparent">
+<span class="font-label text-xs tracking-[0.3em] uppercase text-tertiary mb-2">Collection 04</span>
+<h2 class="serif-title text-4xl md:text-5xl font-bold text-on-surface mb-4">Winter: The Stillness</h2>
+<div class="flex items-center space-x-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700">
+<span class="font-body text-xs tracking-widest uppercase text-on-surface-variant">View Collection</span>
+<div class="h-[1px] w-12 bg-primary"></div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Project Metadata Ribbon -->
+<section class="mt-24 max-w-7xl mx-auto px-8 md:px-16">
+<div class="bg-surface-container-low p-8 flex flex-wrap justify-between items-center gap-8">
+<div class="flex space-x-12">
+<div>
+<span class="block font-label text-[0.625rem] text-[#484848] tracking-widest uppercase mb-1">Equipment</span>
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-tighter">Leica M11 · 35mm Summilux</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] text-[#484848] tracking-widest uppercase mb-1">Location</span>
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-tighter">Highlands &amp; Dolomites</span>
+</div>
+<div>
+<span class="block font-label text-[0.625rem] text-[#484848] tracking-widest uppercase mb-1">Curation</span>
+<span class="font-body text-xs text-on-surface-variant uppercase tracking-tighter">Editorial Selects</span>
+</div>
+</div>
+<button class="bg-primary text-on-primary px-10 py-4 font-body text-xs tracking-widest uppercase hover:bg-primary-dim transition-colors duration-300">
+          Request Print Edition
+        </button>
+</div>
+</section>
+</main>
+<!-- Footer Shell -->
+<footer class="bg-[#0e0e0e] w-full py-16 flex flex-col items-center space-y-4 max-w-7xl mx-auto">
+<div class="flex space-x-8 mb-4">
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Vogue Portfolio</a>
+</div>
+<div class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#acabaa] uppercase">© Sean Image</div>
+</footer>
+<!-- BottomNavBar for Mobile Shell -->
+<nav class="md:hidden fixed bottom-0 w-full bg-surface-container-highest/60 backdrop-blur-xl flex justify-around py-4 z-50">
+<div class="flex flex-col items-center text-[#ffe2af]">
+<span class="material-symbols-outlined">collections</span>
+<span class="text-[0.6rem] uppercase mt-1">Four Seasons</span>
+</div>
+<div class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">grid_view</span>
+<span class="text-[0.6rem] uppercase mt-1">Gallery</span>
+</div>
+<div class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">person</span>
+<span class="text-[0.6rem] uppercase mt-1">About</span>
+</div>
+<div class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">mail</span>
+<span class="text-[0.6rem] uppercase mt-1">Contact</span>
+</div>
+</nav>
+</body></html>
+
+<!-- Seasons Collection - Sean Image -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:ital,wght@0,400;0,700;1,400&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#131313",
+              "on-secondary-container": "#c0bfbf",
+              "primary-container": "#454747",
+              "surface-tint": "#c6c6c7",
+              "primary": "#c6c6c7",
+              "surface-container-highest": "#252626",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#1f2020",
+              "on-tertiary-container": "#624604",
+              "on-primary": "#3f4041",
+              "secondary-fixed": "#e3e2e2",
+              "secondary": "#9e9e9e",
+              "inverse-surface": "#fcf8f8",
+              "inverse-primary": "#5e5f60",
+              "on-error": "#490106",
+              "primary-fixed-dim": "#d4d4d4",
+              "on-primary-container": "#d0d0d0",
+              "on-secondary-fixed-variant": "#5b5b5c",
+              "surface-container-high": "#1f2020",
+              "on-tertiary": "#6b4f0e",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "secondary-dim": "#9e9e9e",
+              "surface-variant": "#252626",
+              "on-tertiary-fixed": "#4a3400",
+              "error-dim": "#bb5551",
+              "secondary-container": "#3b3b3c",
+              "tertiary-fixed-dim": "#ecc479",
+              "error-container": "#7f2927",
+              "outline-variant": "#484848",
+              "tertiary": "#ffe2af",
+              "on-secondary-fixed": "#3e3f40",
+              "background": "#0e0e0e",
+              "error": "#ee7d77",
+              "on-error-container": "#ff9993",
+              "tertiary-container": "#fbd185",
+              "tertiary-fixed": "#fbd185",
+              "inverse-on-surface": "#565554",
+              "tertiary-dim": "#ecc479",
+              "secondary-fixed-dim": "#d5d4d4",
+              "surface-container": "#191a1a",
+              "on-primary-fixed": "#3e4040",
+              "on-surface-variant": "#acabaa",
+              "on-primary-fixed-variant": "#5a5c5c",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-background": "#e7e5e4",
+              "primary-fixed": "#e2e2e2",
+              "on-surface": "#e7e5e4",
+              "on-tertiary-fixed-variant": "#6c500f",
+              "primary-dim": "#b8b9b9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0rem", "lg": "0rem", "xl": "0rem", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body {
+            background-color: #0e0e0e;
+            color: #e7e5e4;
+        }
+    </style>
+</head>
+<body class="font-body selection:bg-tertiary selection:text-on-tertiary-fixed">
+<!-- Top Navigation -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/60 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-8 w-full">
+<div class="font-['Noto_Serif'] text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Four Seasons</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#ffe2af] font-medium" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="md:hidden">
+<span class="material-symbols-outlined text-primary cursor-pointer">menu</span>
+</div>
+</nav>
+<!-- Side Navigation (Web) -->
+<aside class="hidden md:flex fixed left-0 top-0 h-full flex-col items-center py-20 z-40 bg-[#131313] w-20">
+<div class="mb-12">
+<span class="material-symbols-outlined text-tertiary" style="font-variation-settings: 'FILL' 1;">eco</span>
+</div>
+<div class="flex flex-col space-y-12 items-center flex-1">
+<button class="font-['Inter'] text-xs tracking-widest uppercase text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700 transform hover:scale-110">
+<span class="material-symbols-outlined block mb-1">eco</span>
+</button>
+<button class="font-['Inter'] text-xs tracking-widest uppercase text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700 transform hover:scale-110">
+<span class="material-symbols-outlined block mb-1">sunny</span>
+</button>
+<button class="font-['Inter'] text-xs tracking-widest uppercase text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700 transform hover:scale-110">
+<span class="material-symbols-outlined block mb-1">leaf_spark</span>
+</button>
+<button class="font-['Inter'] text-xs tracking-widest uppercase text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700 transform hover:scale-110">
+<span class="material-symbols-outlined block mb-1">ac_unit</span>
+</button>
+</div>
+</aside>
+<main class="md:pl-20 pt-32 pb-20 px-6 max-w-7xl mx-auto">
+<!-- About Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 items-start mb-40">
+<div class="lg:col-span-5 relative">
+<div class="aspect-[4/5] bg-surface-container-lowest overflow-hidden">
+<img alt="Sean Image Portrait" class="w-full h-full object-cover grayscale brightness-90 hover:scale-105 transition-transform duration-[600ms]" data-alt="Editorial black and white portrait of Sean Image" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPOS8AFCHu3dY2y_cXGn2GkHwYxkOZJ-4_mRknTpYgNynT-uqsg4jxB62s8FowiHUPypPXZoPO0--UXSkPbtBj7J9iDFBudI8adNX4-fIVXfnQNHCgjF9ufEBJyKZTjhLz7_PnGX_Il1-1Uyu4KpnvMr0nhJd5FitgZltGk5P0z2gwlUUsQiKZwqXcKmEi_ExMGUlCFtMb8DxzoJpBws-mbk93octfLD2hbcCiMJKqaw1RWBHS-2K4STxyxK1gZ5wxW64MmeCqINc"/>
+</div>
+<div class="absolute -bottom-6 -right-6 hidden lg:block text-tertiary/20 font-headline text-8xl pointer-events-none select-none italic">Sean</div>
+</div>
+<div class="lg:col-span-7 pt-4">
+<h1 class="font-headline text-5xl md:text-7xl mb-8 tracking-tighter">The Vision <br/><span class="text-on-surface-variant font-light italic">of Nature</span></h1>
+<div class="max-w-xl">
+<p class="text-on-surface-variant leading-relaxed text-lg mb-8">
+                        Sean Image is a digital curator and editorial photographer whose work navigates the delicate interplay between raw landscapes and the passage of time. Based in the Pacific Northwest, his practice is defined by a rhythmic observation of the four seasons.
+                    </p>
+<p class="text-on-surface-variant leading-relaxed text-lg mb-12">
+                        His photographs are more than mere captures; they are curated magazine spreads of the natural world. By prioritizing the silence within a frame, Sean transforms standard landscape photography into a high-end gallery experience, where every light leak and seasonal shift is treated with architectural precision.
+                    </p>
+<!-- Metadata Ribbon -->
+<div class="bg-surface-container-low p-6 flex flex-wrap gap-8 items-center">
+<div class="flex flex-col">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest text-[#484848]">Focus</span>
+<span class="font-body text-sm text-primary">Ephemeral Landscapes</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest text-[#484848]">Medium</span>
+<span class="font-body text-sm text-primary">Digital Medium Format</span>
+</div>
+<div class="flex flex-col">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest text-[#484848]">Location</span>
+<span class="font-body text-sm text-primary">Worldwide</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-24 mb-40 border-t border-outline-variant/15 pt-24">
+<div class="lg:col-span-4">
+<h2 class="font-headline text-4xl mb-6 tracking-tight">Inquiries</h2>
+<p class="text-on-surface-variant mb-12 max-w-xs font-light">Available for editorial commissions, limited edition prints, and creative collaborations.</p>
+<div class="flex flex-col space-y-4">
+<a class="group flex items-center space-x-3 text-[#acabaa] hover:text-tertiary transition-colors duration-500" href="https://instagram.com">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Instagram</span>
+<span class="h-[1px] w-8 bg-outline-variant group-hover:bg-tertiary transition-all"></span>
+</a>
+<a class="group flex items-center space-x-3 text-[#acabaa] hover:text-tertiary transition-colors duration-500" href="https://behance.net">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">Behance</span>
+<span class="h-[1px] w-8 bg-outline-variant group-hover:bg-tertiary transition-all"></span>
+</a>
+<a class="group flex items-center space-x-3 text-[#acabaa] hover:text-tertiary transition-colors duration-500" href="https://500px.com">
+<span class="font-label text-[0.6875rem] uppercase tracking-widest">500px</span>
+<span class="h-[1px] w-8 bg-outline-variant group-hover:bg-tertiary transition-all"></span>
+</a>
+</div>
+</div>
+<div class="lg:col-span-8">
+<form class="space-y-12">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+<div class="group relative">
+<label class="block font-label text-[0.6875rem] uppercase tracking-widest text-[#484848] mb-2 group-focus-within:text-tertiary transition-colors">Name</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-tertiary py-3 px-0 placeholder:text-[#252626] text-on-surface transition-all" placeholder="Your Full Name" type="text"/>
+</div>
+<div class="group relative">
+<label class="block font-label text-[0.6875rem] uppercase tracking-widest text-[#484848] mb-2 group-focus-within:text-tertiary transition-colors">Email</label>
+<input class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-tertiary py-3 px-0 placeholder:text-[#252626] text-on-surface transition-all" placeholder="email@example.com" type="email"/>
+</div>
+</div>
+<div class="group relative">
+<label class="block font-label text-[0.6875rem] uppercase tracking-widest text-[#484848] mb-2 group-focus-within:text-tertiary transition-colors">Message</label>
+<textarea class="w-full bg-transparent border-0 border-b border-outline-variant focus:ring-0 focus:border-tertiary py-3 px-0 placeholder:text-[#252626] text-on-surface transition-all resize-none" placeholder="How can we collaborate?" rows="4"></textarea>
+</div>
+<div class="flex justify-end">
+<button class="bg-primary text-on-primary px-12 py-4 font-label text-xs uppercase tracking-[0.2em] hover:bg-primary-dim transition-colors duration-300" type="submit">
+                            Send Message
+                        </button>
+</div>
+</form>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-[#0e0e0e] w-full py-16">
+<div class="flex flex-col items-center space-y-4 max-w-7xl mx-auto">
+<div class="flex space-x-8 mb-4">
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase" href="#">Vogue Portfolio</a>
+</div>
+<p class="font-['Inter'] text-[0.6875rem] tracking-widest text-[#484848] uppercase">© Sean Image</p>
+</div>
+</footer>
+<!-- Mobile Navigation Bottom (Semantic Shell) -->
+<div class="md:hidden fixed bottom-0 left-0 w-full bg-surface-container-low border-t border-outline-variant/10 z-50 flex justify-around items-center py-4">
+<button class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">home</span>
+</button>
+<button class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">grid_view</span>
+</button>
+<button class="flex flex-col items-center text-tertiary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">person</span>
+</button>
+<button class="flex flex-col items-center text-[#acabaa]">
+<span class="material-symbols-outlined">mail</span>
+</button>
+</div>
+</body></html>
+
+<!-- About & Contact - Sean Image -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#131313",
+              "on-secondary-container": "#c0bfbf",
+              "primary-container": "#454747",
+              "surface-tint": "#c6c6c7",
+              "primary": "#c6c6c7",
+              "surface-container-highest": "#252626",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#1f2020",
+              "on-tertiary-container": "#624604",
+              "on-primary": "#3f4041",
+              "secondary-fixed": "#e3e2e2",
+              "secondary": "#9e9e9e",
+              "inverse-surface": "#fcf8f8",
+              "inverse-primary": "#5e5f60",
+              "on-error": "#490106",
+              "primary-fixed-dim": "#d4d4d4",
+              "on-primary-container": "#d0d0d0",
+              "on-secondary-fixed-variant": "#5b5b5c",
+              "surface-container-high": "#1f2020",
+              "on-tertiary": "#6b4f0e",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "secondary-dim": "#9e9e9e",
+              "surface-variant": "#252626",
+              "on-tertiary-fixed": "#4a3400",
+              "error-dim": "#bb5551",
+              "secondary-container": "#3b3b3c",
+              "tertiary-fixed-dim": "#ecc479",
+              "error-container": "#7f2927",
+              "outline-variant": "#484848",
+              "tertiary": "#ffe2af",
+              "on-secondary-fixed": "#3e3f40",
+              "background": "#0e0e0e",
+              "error": "#ee7d77",
+              "on-error-container": "#ff9993",
+              "tertiary-container": "#fbd185",
+              "tertiary-fixed": "#fbd185",
+              "inverse-on-surface": "#565554",
+              "tertiary-dim": "#ecc479",
+              "secondary-fixed-dim": "#d5d4d4",
+              "surface-container": "#191a1a",
+              "on-primary-fixed": "#3e4040",
+              "on-surface-variant": "#acabaa",
+              "on-primary-fixed-variant": "#5a5c5c",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-background": "#e7e5e4",
+              "primary-fixed": "#e2e2e2",
+              "on-surface": "#e7e5e4",
+              "on-tertiary-fixed-variant": "#6c500f",
+              "primary-dim": "#b8b9b9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { scroll-behavior: smooth; }
+        /* Mobile seasonal selector behavior */
+        #seasonal-toggle:checked ~ #seasonal-menu { transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary-fixed overflow-x-hidden">
+<!-- Shared Component: TopNavBar (Mobile Optimized) -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 md:py-8 border-b border-white/5">
+<div class="font-['Noto_Serif'] text-lg md:text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#ffe2af] font-medium transition-colors duration-500" href="#">Four Seasons</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="md:hidden flex items-center">
+<label class="cursor-pointer" for="seasonal-toggle">
+<span class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+</label>
+</div>
+</nav>
+<!-- Mobile Seasonal Menu (Bottom Sheet Simulation) -->
+<input class="hidden peer" id="seasonal-toggle" type="checkbox"/>
+<div class="fixed inset-x-0 bottom-0 z-[60] bg-surface-container-high translate-y-full transition-transform duration-500 md:hidden border-t border-outline-variant/20 pb-12 pt-8 px-8" id="seasonal-menu">
+<div class="w-12 h-1 bg-outline-variant/30 rounded-full mx-auto mb-8"></div>
+<h4 class="font-headline text-center text-xl mb-8">Select Season</h4>
+<div class="grid grid-cols-2 gap-4">
+<button class="flex flex-col items-center py-6 bg-surface-container rounded-sm">
+<span class="material-symbols-outlined mb-2 text-tertiary">eco</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Spring</span>
+</button>
+<button class="flex flex-col items-center py-6 bg-surface-container rounded-sm">
+<span class="material-symbols-outlined mb-2 text-tertiary">sunny</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Summer</span>
+</button>
+<button class="flex flex-col items-center py-6 bg-surface-container rounded-sm">
+<span class="material-symbols-outlined mb-2 text-tertiary">leaf_spark</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Autumn</span>
+</button>
+<button class="flex flex-col items-center py-6 bg-surface-container rounded-sm">
+<span class="material-symbols-outlined mb-2 text-tertiary">ac_unit</span>
+<span class="font-label text-[10px] tracking-widest uppercase">Winter</span>
+</button>
+</div>
+<label class="block text-center mt-8 font-label text-[10px] tracking-widest uppercase text-outline underline cursor-pointer" for="seasonal-toggle">Close</label>
+</div>
+<div class="fixed inset-0 bg-black/60 z-[55] hidden peer-checked:block transition-opacity md:hidden"></div>
+<!-- Shared Component: SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-20 z-40 bg-[#131313] w-20 hidden lg:flex">
+<div class="mb-12">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">filter_vintage</span>
+</div>
+</div>
+<div class="flex flex-col space-y-12 flex-1 justify-center">
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">eco</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Spring</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">sunny</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Summer</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">leaf_spark</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Autumn</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">ac_unit</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Winter</span>
+</button>
+</div>
+</aside>
+<!-- Hero Section (Mobile Optimized - Vertical Aspect) -->
+<section class="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0">
+<!-- Changed to vertical emphasis for mobile screens -->
+<img class="w-full h-full object-cover md:scale-105" data-alt="A misty morning landscape showing the transition between seasons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPmIDPOEEhqKAMJ2QJsO3HpKLymPBoFDA1WPgDZLMArnwZt5X-SX99EsUiO7mlqGNSQEDfzzzxq_7MRPVhB6csOLz0FC26SAhnNWdUNd84CIgjmPfXbIVEZxNlgyQwylIxTGwqxo8YKf42Mlv87SX7q5a_arwyCzJqnN6UuPORKetbhK-HPOxCVvTStxPPSYYtJpk5WH0pMxh6rPwrzGt2LPXUOVUf-gmneuRs7Uke0uuGhffHQUPgHQ2GlxAfmt_b3LN_blt9cY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center px-6 mt-20">
+<span class="font-body text-label text-tertiary tracking-[0.4em] uppercase text-[10px] mb-4 block">Editorial Collection</span>
+<h1 class="font-headline text-5xl md:text-8xl lg:text-9xl text-on-surface tracking-tighter leading-none mb-12">
+            Four Seasons <br/> <span class="italic font-light opacity-80 text-3xl md:text-6xl">by Sean Image</span>
+</h1>
+<a class="inline-flex items-center space-x-4 bg-primary text-on-primary px-8 py-5 md:px-10 md:py-5 font-label tracking-widest text-[11px] uppercase hover:bg-primary-dim transition-colors duration-500 w-full sm:w-auto justify-center" href="#gallery">
+<span>View the Collection</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="relative z-10 lg:pl-20" id="gallery">
+<!-- Section Header (Mobile Responsive Padding) -->
+<header class="max-w-7xl mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-16 md:pb-20">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl md:text-4xl mb-6 text-on-surface">The Cycle of Light</h2>
+<p class="text-on-surface-variant font-body leading-relaxed text-base md:text-lg">
+                    A two-year study capturing the ephemeral shifts of the Nordic landscape. From the first thaw of April to the deep silence of January, these images represent the patient observation of nature's relentless rhythm.
+                </p>
+</div>
+<div class="flex space-x-8 text-on-surface-variant font-label text-[9px] md:text-[10px] tracking-[0.3em] uppercase">
+<div class="flex flex-col">
+<span class="text-outline mb-2">Location</span>
+<span class="text-on-surface">Lofoten, Norway</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline mb-2">Format</span>
+<span class="text-on-surface">Medium Format</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Gallery Grid (Mobile: Stacked, Desktop: Asymmetric Bento) -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12">
+<!-- Featured Item -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[4/5] md:aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Dramatic autumn mountain peaks with golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYgUtfHKXwB8zVfm1E_x9qJOanV5ogl3UjRXf0odcw9iFXmlkSVORdxVHpGQisXBKfwXu2fulVo4ak-qVpS-Uv33ahVHi6nIIAAL0WFz5xuiZS3eiwN25ssVH3SQBodMtL158sP1YYKT0ejtfUTqBXf6i5I6lw-Hs3LT62v2xYmqzxJfaPMRs1pbS0jSMTAOtBCxWwjHlDD2l2nyAnPX6JV7emVTGNlo_IGxRjRkj4g4iHG4wpOhcYu8yDtT-iNBrcHymnCux0lY"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Autumn</span>
+<h3 class="font-headline text-xl md:text-2xl text-on-surface">The Golden Hour Summit</h3>
+</div>
+<div class="flex gap-4 text-[9px] text-on-surface-variant font-label tracking-tighter bg-surface-container-low/80 px-4 py-2">
+<span>f/8.0</span>
+<span>1/125s</span>
+<span>ISO 200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Item -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[3/4] h-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Snow covered mountain under a starlit winter sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR3NWjJ1OuGZKYv6NtJUfrBjPLO09kgeDRUADjeNn2QXOfDTRnVZFjAF5LXm_aixm3lL5372usIyi9HWJvRmy9OmCNe0UtiJyD_wVVY4R3FTRMmie63OT6Ftwam85uhcPxt37b7mvpft28PENYyR0mBX0ykcRCBa3Bg4T1cWNjgagNmLlqMT0HrSzvUUMzUQlpHYfzJd9jiBn897OgWP1mUwqUcPruJKoZILuOOd0xYoXrCqZnnEQseAWiYMWPe9rPdfimJ48HaU4"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Winter</span>
+<h3 class="font-headline text-xl md:text-2xl text-on-surface">Celestial Frost</h3>
+</div>
+</div>
+<!-- Staggered Items - Stack on Mobile -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Vibrant spring flowers in a wild meadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2MQxySSBgMIVKbPnpIVF3txsWMdNJdczFtU-gwTrBe_lTfoGPT28K6k6h5Az7fx-Hbyi7rH5X3lHZtwDZy5tuWtvaQvKGtI12rs30bXMZAyuKbJE4nUto2HvtmXCdLuHeR2XM81oBHyvGiOhsWn0aAa299IcECmwxZlFw2T8SfkWUZMv9c1VJSBhzF-at7TzbU-TOtixoV4tUmtdmr9Q6_JdLZNftj0pdinElTLUncgVfPM8tM5O3HE2FJZLgxmc1J8GpLRFF1g"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Spring</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">The Awakening</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Deep green summer forest with sunlight streaming through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6VBqR00vBOi3Zk7UpYlF1r0SyfLXuNFDbCBx00Jq1lcBc4tgcFa9Y8XnmfP05IZ0NBDKxTbavwM9ZO_VnpyBYJjwuFKmgnxO_FjjxlHIPSkjyGjxqmUlzBsSq7DDcd4iTLgqCcIKhoQi1R7ASe85pNLGYU2vcTT9TvHwllZt7MlKr1Sv6IhFZRn0F9PZvZ19Nuc3yCQQxJUgXI-yFtzbhCTN2f0fDRrZUquYOarq3shoa45SM4PDWSyapPmVLPEh50ySa3WSuCrk"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Summer</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">Solstice Green</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Reflective lake surface mirroring autumn foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJdU3-eBEhEgNggu-GMbl74D5Q9saWsIZZcpigcQ8uydAawquXpWZtnq7bb5-Kaa5oJu9Xpm2OMf0NMS_fSd_d2v489_7AZHOEOz_QL9t4fCgVQG5ld2QYkPPlrr4X-FhTTJt7mhnb3vMhgMqnhL4sDxkyJlqmk-6qWPQT9927KUJYAREi0hhGeqDUZX8j2W__PMfUDF1rz8QLewJVCM-2j_EAJqDXMTmjO91uXodhxI1kOdbgsXMJlS0SmoXxkhKbm-044Q2Ko8"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Autumn</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">Glass Silence</h3>
+</div>
+</div>
+<!-- Panoramic (Mobile friendly height) -->
+<div class="md:col-span-12 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[4/3] md:aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Wide panorama of misty mountain ranges at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2inlPbBdLZeHTu5lcPe4fNezYqpzbxpKmipOggP-rswJjpZzx-uzq9Rfe1v6_wdZTZtZpaVfE4WZhnKF7Al7SNREod-hlYZAN4Y13o5t_4yH9fS-Aql6EvwhLP1m4bSiWR-INSDw5bLAKWfKlfbhOHTUBfDy4NiL0UD9-fMQEuKHheDSE3-hZiLGdQiyfTCyGEqFnKAXbd_juTvavMVsUi3k0urYr8txPlWd4RjnBnqgjUu3LPIq910rXRmUmAH-8iLjWLtV9a3o"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12 backdrop-blur-sm">
+<div class="max-w-2xl">
+<span class="text-tertiary text-[10px] tracking-[0.4em] uppercase mb-4 block">Seasonal Panorama</span>
+<h3 class="font-headline text-2xl md:text-4xl text-on-surface mb-6">The Infinite Horizon</h3>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-[9px] md:text-[11px] text-on-surface-variant font-label tracking-widest uppercase border-t border-outline-variant/30 pt-6">
+<span>35mm f/11</span>
+<span>1/15s</span>
+<span>ISO 50</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Metadata Ribbon (Mobile Stacked) -->
+<section class="bg-surface-container-low py-16 px-6 md:px-12 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-tertiary text-2xl">camera</span>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Technical Specifications</span>
+</div>
+<div class="grid grid-cols-2 md:flex md:flex-wrap gap-10 md:gap-12 font-label text-[10px] tracking-[0.2em] uppercase text-on-surface w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Body</span>
+<span>Phase One XF</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Lens</span>
+<span>Schneider 80mm</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Color</span>
+<span>DCI-P3 Tuned</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Print</span>
+<span>Hahnemühle Rag</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About/CTA Section (Mobile Friendly) -->
+<section class="py-24 md:py-32 px-6 md:px-12">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="font-headline text-3xl mb-8">Bring the Seasons into Your Space</h3>
+<p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-12">
+                Limited edition archival pigment prints are available for each piece in this collection. Each print is numbered, signed, and accompanied by a certificate of authenticity.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-12 py-5 font-label tracking-widest text-[11px] uppercase hover:bg-primary-dim transition-all w-full sm:w-auto">Order Inquiries</button>
+<button class="border border-outline-variant/30 text-on-surface px-12 py-5 font-label tracking-widest text-[11px] uppercase hover:bg-surface-container-high transition-all w-full sm:w-auto">Download Catalog</button>
+</div>
+</div>
+</section>
+<!-- Shared Component: Footer (Stacked Links) -->
+<footer class="bg-[#0e0e0e] w-full py-20 flex flex-col items-center space-y-12 max-w-7xl mx-auto border-t border-outline-variant/10 px-6">
+<div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Vogue Portfolio</a>
+</div>
+<div class="text-[#acabaa] font-['Inter'] text-[0.6875rem] tracking-[0.3em] uppercase opacity-50">
+            © Sean Image
+        </div>
+</footer>
+</main>
+<!-- Contextual FAB (Hidden on Mobile, now standard on tablet+) -->
+<div class="fixed bottom-8 right-8 z-50 md:block hidden">
+<button class="w-16 h-16 bg-tertiary text-on-tertiary-fixed rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</body></html>
+
+<!-- Sean Image - Four Seasons (Mobile Home) -->
+<!DOCTYPE html>
+
+<html class="dark" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif:wght@400;700&amp;family=Inter:wght@300;400;500;600&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "surface-container-low": "#131313",
+              "on-secondary-container": "#c0bfbf",
+              "primary-container": "#454747",
+              "surface-tint": "#c6c6c7",
+              "primary": "#c6c6c7",
+              "surface-container-highest": "#252626",
+              "surface-container-lowest": "#000000",
+              "on-secondary": "#1f2020",
+              "on-tertiary-container": "#624604",
+              "on-primary": "#3f4041",
+              "secondary-fixed": "#e3e2e2",
+              "secondary": "#9e9e9e",
+              "inverse-surface": "#fcf8f8",
+              "inverse-primary": "#5e5f60",
+              "on-error": "#490106",
+              "primary-fixed-dim": "#d4d4d4",
+              "on-primary-container": "#d0d0d0",
+              "on-secondary-fixed-variant": "#5b5b5c",
+              "surface-container-high": "#1f2020",
+              "on-tertiary": "#6b4f0e",
+              "surface-bright": "#2c2c2c",
+              "outline": "#767575",
+              "secondary-dim": "#9e9e9e",
+              "surface-variant": "#252626",
+              "on-tertiary-fixed": "#4a3400",
+              "error-dim": "#bb5551",
+              "secondary-container": "#3b3b3c",
+              "tertiary-fixed-dim": "#ecc479",
+              "error-container": "#7f2927",
+              "outline-variant": "#484848",
+              "tertiary": "#ffe2af",
+              "on-secondary-fixed": "#3e3f40",
+              "background": "#0e0e0e",
+              "error": "#ee7d77",
+              "on-error-container": "#ff9993",
+              "tertiary-container": "#fbd185",
+              "tertiary-fixed": "#fbd185",
+              "inverse-on-surface": "#565554",
+              "tertiary-dim": "#ecc479",
+              "secondary-fixed-dim": "#d5d4d4",
+              "surface-container": "#191a1a",
+              "on-primary-fixed": "#3e4040",
+              "on-surface-variant": "#acabaa",
+              "on-primary-fixed-variant": "#5a5c5c",
+              "surface": "#0e0e0e",
+              "surface-dim": "#0e0e0e",
+              "on-background": "#e7e5e4",
+              "primary-fixed": "#e2e2e2",
+              "on-surface": "#e7e5e4",
+              "on-tertiary-fixed-variant": "#6c500f",
+              "primary-dim": "#b8b9b9"
+            },
+            fontFamily: {
+              "headline": ["Noto Serif"],
+              "body": ["Inter"],
+              "label": ["Inter"]
+            },
+            borderRadius: {"DEFAULT": "0px", "lg": "0px", "xl": "0px", "full": "9999px"},
+          },
+        },
+      }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 300, 'GRAD' 0, 'opsz' 24;
+        }
+        body { scroll-behavior: smooth; }
+        /* Mobile seasonal selector behavior */
+        #seasonal-toggle:checked ~ #seasonal-menu { transform: translateY(0); }
+    </style>
+</head>
+<body class="bg-background text-on-surface font-body selection:bg-tertiary selection:text-on-tertiary-fixed overflow-x-hidden">
+<!-- Shared Component: TopNavBar (Mobile Optimized) -->
+<nav class="fixed top-0 w-full z-50 bg-[#0e0e0e]/80 backdrop-blur-xl flex justify-between items-center px-6 md:px-12 py-6 md:py-8 border-b border-white/5">
+<div class="font-['Noto_Serif'] text-lg md:text-xl tracking-tighter text-[#e7e5e4]">Sean Image</div>
+<div class="hidden md:flex space-x-12">
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#ffe2af] font-medium transition-colors duration-500" href="#">Four Seasons</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Gallery</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">About</a>
+<a class="font-['Noto_Serif'] tracking-[0.05em] uppercase text-sm text-[#acabaa] hover:text-[#e7e5e4] transition-colors duration-500" href="#">Contact</a>
+</div>
+<div class="md:hidden flex items-center">
+<label class="cursor-pointer" for="seasonal-toggle">
+<span class="material-symbols-outlined text-primary text-2xl">grid_view</span>
+</label>
+</div>
+</nav>
+<!-- Mobile Seasonal Menu (Bottom Sheet Simulation) -->
+<input class="hidden peer" id="seasonal-toggle" type="checkbox"/>
+<div class="fixed inset-x-0 bottom-0 z-[60] bg-[#0e0e0e] translate-y-full transition-transform duration-500 md:hidden border-t border-white/10 pb-16 pt-10 px-8" id="seasonal-menu">
+<div class="w-12 h-1 bg-outline-variant/30 rounded-full mx-auto mb-8"></div>
+<h4 class="font-headline text-center text-xl mb-8 font-headline tracking-widest uppercase text-sm opacity-60">Select Season</h4>
+<div class="grid grid-cols-2 gap-4"><button class="flex flex-col items-center py-8 bg-[#131313] border border-white/5 rounded-sm active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined mb-3 text-tertiary/80 text-3xl">eco</span>
+<span class="font-headline text-xs tracking-[0.2em] uppercase text-on-surface">Spring</span>
+</button>
+<button class="flex flex-col items-center py-8 bg-[#131313] border border-white/5 rounded-sm active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined mb-3 text-tertiary/80 text-3xl">sunny</span>
+<span class="font-headline text-xs tracking-[0.2em] uppercase text-on-surface">Summer</span>
+</button>
+<button class="flex flex-col items-center py-8 bg-[#131313] border border-white/5 rounded-sm active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined mb-3 text-tertiary/80 text-3xl">filter_vintage</span>
+<span class="font-headline text-xs tracking-[0.2em] uppercase text-on-surface">Autumn</span>
+</button>
+<button class="flex flex-col items-center py-8 bg-[#131313] border border-white/5 rounded-sm active:bg-surface-container-highest transition-colors">
+<span class="material-symbols-outlined mb-3 text-tertiary/80 text-3xl">ac_unit</span>
+<span class="font-headline text-xs tracking-[0.2em] uppercase text-on-surface">Winter</span>
+</button></div>
+<label class="block text-center mt-10 font-headline text-[10px] tracking-[0.3em] uppercase text-outline hover:text-on-surface transition-colors cursor-pointer" for="seasonal-toggle">Close Navigation</label>
+</div>
+<div class="fixed inset-0 bg-black/60 z-[55] hidden peer-checked:block transition-opacity md:hidden"></div>
+<!-- Shared Component: SideNavBar (Desktop Only) -->
+<aside class="fixed left-0 top-0 h-full flex flex-col items-center py-20 z-40 bg-[#131313] w-20 hidden lg:flex">
+<div class="mb-12">
+<div class="w-10 h-10 bg-surface-container-high flex items-center justify-center">
+<span class="material-symbols-outlined text-primary">filter_vintage</span>
+</div>
+</div>
+<div class="flex flex-col space-y-12 flex-1 justify-center">
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">eco</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Spring</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">sunny</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Summer</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">leaf_spark</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Autumn</span>
+</button>
+<button class="flex flex-col items-center group text-[#acabaa] hover:text-[#e7e5e4] transition-all duration-700">
+<span class="material-symbols-outlined mb-1">ac_unit</span>
+<span class="font-['Inter'] text-[10px] tracking-widest uppercase">Winter</span>
+</button>
+</div>
+</aside>
+<!-- Hero Section (Mobile Optimized - Vertical Aspect) -->
+<section class="relative h-[100dvh] w-full flex items-center justify-center overflow-hidden bg-surface-container-lowest">
+<div class="absolute inset-0">
+<!-- Changed to vertical emphasis for mobile screens -->
+<img class="w-full h-full object-cover md:scale-105" data-alt="A misty morning landscape showing the transition between seasons" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBAPmIDPOEEhqKAMJ2QJsO3HpKLymPBoFDA1WPgDZLMArnwZt5X-SX99EsUiO7mlqGNSQEDfzzzxq_7MRPVhB6csOLz0FC26SAhnNWdUNd84CIgjmPfXbIVEZxNlgyQwylIxTGwqxo8YKf42Mlv87SX7q5a_arwyCzJqnN6UuPORKetbhK-HPOxCVvTStxPPSYYtJpk5WH0pMxh6rPwrzGt2LPXUOVUf-gmneuRs7Uke0uuGhffHQUPgHQ2GlxAfmt_b3LN_blt9cY"/>
+<div class="absolute inset-0 bg-gradient-to-b from-background/40 via-transparent to-background"></div>
+</div>
+<div class="relative z-10 text-center px-6 mt-20">
+<span class="font-body text-label text-tertiary tracking-[0.4em] uppercase text-[10px] mb-4 block">Editorial Collection</span>
+<h1 class="font-headline text-5xl md:text-8xl lg:text-9xl text-on-surface tracking-tighter leading-none mb-12">
+            Four Seasons <br/> <span class="italic font-light opacity-80 text-3xl md:text-6xl">by Sean Image</span>
+</h1>
+<a class="inline-flex items-center space-x-4 bg-primary text-on-primary px-8 py-5 md:px-10 md:py-5 font-label tracking-widest text-[11px] uppercase hover:bg-primary-dim transition-colors duration-500 w-full sm:w-auto justify-center" href="#gallery">
+<span>View the Collection</span>
+<span class="material-symbols-outlined text-sm">arrow_downward</span>
+</a>
+</div>
+</section>
+<!-- Main Content Canvas -->
+<main class="relative z-10 lg:pl-20" id="gallery">
+<!-- Section Header (Mobile Responsive Padding) -->
+<header class="max-w-7xl mx-auto px-6 md:px-12 pt-20 md:pt-32 pb-16 md:pb-20">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+<div class="max-w-xl">
+<h2 class="font-headline text-3xl md:text-4xl mb-6 text-on-surface">The Cycle of Light</h2>
+<p class="text-on-surface-variant font-body leading-relaxed text-base md:text-lg">
+                    A two-year study capturing the ephemeral shifts of the Nordic landscape. From the first thaw of April to the deep silence of January, these images represent the patient observation of nature's relentless rhythm.
+                </p>
+</div>
+<div class="flex space-x-8 text-on-surface-variant font-label text-[9px] md:text-[10px] tracking-[0.3em] uppercase">
+<div class="flex flex-col">
+<span class="text-outline mb-2">Location</span>
+<span class="text-on-surface">Lofoten, Norway</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline mb-2">Format</span>
+<span class="text-on-surface">Medium Format</span>
+</div>
+</div>
+</div>
+</header>
+<!-- Gallery Grid (Mobile: Stacked, Desktop: Asymmetric Bento) -->
+<section class="max-w-7xl mx-auto px-6 md:px-12 pb-24 md:pb-32">
+<div class="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12">
+<!-- Featured Item -->
+<div class="md:col-span-8 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[4/5] md:aspect-video overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Dramatic autumn mountain peaks with golden light" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCgYgUtfHKXwB8zVfm1E_x9qJOanV5ogl3UjRXf0odcw9iFXmlkSVORdxVHpGQisXBKfwXu2fulVo4ak-qVpS-Uv33ahVHi6nIIAAL0WFz5xuiZS3eiwN25ssVH3SQBodMtL158sP1YYKT0ejtfUTqBXf6i5I6lw-Hs3LT62v2xYmqzxJfaPMRs1pbS0jSMTAOtBCxWwjHlDD2l2nyAnPX6JV7emVTGNlo_IGxRjRkj4g4iHG4wpOhcYu8yDtT-iNBrcHymnCux0lY"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-4">
+<div>
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Autumn</span>
+<h3 class="font-headline text-xl md:text-2xl text-on-surface">The Golden Hour Summit</h3>
+</div>
+<div class="flex gap-4 text-[9px] text-on-surface-variant font-label tracking-tighter bg-surface-container-low/80 px-4 py-2">
+<span>f/8.0</span>
+<span>1/125s</span>
+<span>ISO 200</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Vertical Item -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[3/4] h-full overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Snow covered mountain under a starlit winter sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAR3NWjJ1OuGZKYv6NtJUfrBjPLO09kgeDRUADjeNn2QXOfDTRnVZFjAF5LXm_aixm3lL5372usIyi9HWJvRmy9OmCNe0UtiJyD_wVVY4R3FTRMmie63OT6Ftwam85uhcPxt37b7mvpft28PENYyR0mBX0ykcRCBa3Bg4T1cWNjgagNmLlqMT0HrSzvUUMzUQlpHYfzJd9jiBn897OgWP1mUwqUcPruJKoZILuOOd0xYoXrCqZnnEQseAWiYMWPe9rPdfimJ48HaU4"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Winter</span>
+<h3 class="font-headline text-xl md:text-2xl text-on-surface">Celestial Frost</h3>
+</div>
+</div>
+<!-- Staggered Items - Stack on Mobile -->
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Vibrant spring flowers in a wild meadow" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBk2MQxySSBgMIVKbPnpIVF3txsWMdNJdczFtU-gwTrBe_lTfoGPT28K6k6h5Az7fx-Hbyi7rH5X3lHZtwDZy5tuWtvaQvKGtI12rs30bXMZAyuKbJE4nUto2HvtmXCdLuHeR2XM81oBHyvGiOhsWn0aAa299IcECmwxZlFw2T8SfkWUZMv9c1VJSBhzF-at7TzbU-TOtixoV4tUmtdmr9Q6_JdLZNftj0pdinElTLUncgVfPM8tM5O3HE2FJZLgxmc1J8GpLRFF1g"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Spring</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">The Awakening</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Deep green summer forest with sunlight streaming through" src="https://lh3.googleusercontent.com/aida-public/AB6AXuA6VBqR00vBOi3Zk7UpYlF1r0SyfLXuNFDbCBx00Jq1lcBc4tgcFa9Y8XnmfP05IZ0NBDKxTbavwM9ZO_VnpyBYJjwuFKmgnxO_FjjxlHIPSkjyGjxqmUlzBsSq7DDcd4iTLgqCcIKhoQi1R7ASe85pNLGYU2vcTT9TvHwllZt7MlKr1Sv6IhFZRn0F9PZvZ19Nuc3yCQQxJUgXI-yFtzbhCTN2f0fDRrZUquYOarq3shoa45SM4PDWSyapPmVLPEh50ySa3WSuCrk"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Summer</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">Solstice Green</h3>
+</div>
+</div>
+<div class="md:col-span-4 group relative overflow-hidden bg-surface-container">
+<div class="aspect-square overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Reflective lake surface mirroring autumn foliage" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAmJdU3-eBEhEgNggu-GMbl74D5Q9saWsIZZcpigcQ8uydAawquXpWZtnq7bb5-Kaa5oJu9Xpm2OMf0NMS_fSd_d2v489_7AZHOEOz_QL9t4fCgVQG5ld2QYkPPlrr4X-FhTTJt7mhnb3vMhgMqnhL4sDxkyJlqmk-6qWPQT9927KUJYAREi0hhGeqDUZX8j2W__PMfUDF1rz8QLewJVCM-2j_EAJqDXMTmjO91uXodhxI1kOdbgsXMJlS0SmoXxkhKbm-044Q2Ko8"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-6 md:p-8 backdrop-blur-sm">
+<span class="text-tertiary text-[9px] tracking-widest uppercase mb-1 block">Autumn</span>
+<h3 class="font-headline text-lg md:text-xl text-on-surface">Glass Silence</h3>
+</div>
+</div>
+<!-- Panoramic (Mobile friendly height) -->
+<div class="md:col-span-12 group relative overflow-hidden bg-surface-container">
+<div class="aspect-[4/3] md:aspect-[21/9] overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[800ms] ease-out" data-alt="Wide panorama of misty mountain ranges at dawn" src="https://lh3.googleusercontent.com/aida-public/AB6AXuB2inlPbBdLZeHTu5lcPe4fNezYqpzbxpKmipOggP-rswJjpZzx-uzq9Rfe1v6_wdZTZtZpaVfE4WZhnKF7Al7SNREod-hlYZAN4Y13o5t_4yH9fS-Aql6EvwhLP1m4bSiWR-INSDw5bLAKWfKlfbhOHTUBfDy4NiL0UD9-fMQEuKHheDSE3-hZiLGdQiyfTCyGEqFnKAXbd_juTvavMVsUi3k0urYr8txPlWd4RjnBnqgjUu3LPIq910rXRmUmAH-8iLjWLtV9a3o"/>
+</div>
+<div class="absolute inset-0 bg-surface-container-lowest/40 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col justify-end p-8 md:p-12 backdrop-blur-sm">
+<div class="max-w-2xl">
+<span class="text-tertiary text-[10px] tracking-[0.4em] uppercase mb-4 block">Seasonal Panorama</span>
+<h3 class="font-headline text-2xl md:text-4xl text-on-surface mb-6">The Infinite Horizon</h3>
+<div class="flex flex-wrap gap-x-6 gap-y-2 text-[9px] md:text-[11px] text-on-surface-variant font-label tracking-widest uppercase border-t border-outline-variant/30 pt-6">
+<span>35mm f/11</span>
+<span>1/15s</span>
+<span>ISO 50</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Metadata Ribbon (Mobile Stacked) -->
+<section class="bg-surface-container-low py-16 px-6 md:px-12 border-y border-outline-variant/10">
+<div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-start md:items-center gap-12">
+<div class="flex items-center space-x-6">
+<span class="material-symbols-outlined text-tertiary text-2xl">camera</span>
+<span class="font-label text-xs tracking-widest text-on-surface-variant uppercase">Technical Specifications</span>
+</div>
+<div class="grid grid-cols-2 md:flex md:flex-wrap gap-10 md:gap-12 font-label text-[10px] tracking-[0.2em] uppercase text-on-surface w-full md:w-auto">
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Body</span>
+<span>Phase One XF</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Lens</span>
+<span>Schneider 80mm</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Color</span>
+<span>DCI-P3 Tuned</span>
+</div>
+<div class="flex flex-col">
+<span class="text-outline-variant mb-1">Print</span>
+<span>Hahnemühle Rag</span>
+</div>
+</div>
+</div>
+</section>
+<!-- About/CTA Section (Mobile Friendly) -->
+<section class="py-24 md:py-32 px-6 md:px-12">
+<div class="max-w-3xl mx-auto text-center">
+<h3 class="font-headline text-3xl mb-8">Bring the Seasons into Your Space</h3>
+<p class="text-on-surface-variant text-base md:text-lg leading-relaxed mb-12">
+                Limited edition archival pigment prints are available for each piece in this collection. Each print is numbered, signed, and accompanied by a certificate of authenticity.
+            </p>
+<div class="flex flex-col sm:flex-row justify-center gap-4">
+<button class="bg-primary text-on-primary px-12 py-5 font-label tracking-widest text-[11px] uppercase hover:bg-primary-dim transition-all w-full sm:w-auto">Order Inquiries</button>
+<button class="border border-outline-variant/30 text-on-surface px-12 py-5 font-label tracking-widest text-[11px] uppercase hover:bg-surface-container-high transition-all w-full sm:w-auto">Download Catalog</button>
+</div>
+</div>
+</section>
+<!-- Shared Component: Footer (Stacked Links) -->
+<footer class="bg-[#0e0e0e] w-full py-20 flex flex-col items-center space-y-12 max-w-7xl mx-auto border-t border-outline-variant/10 px-6">
+<div class="flex flex-col md:flex-row items-center space-y-8 md:space-y-0 md:space-x-12">
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Contact</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Instagram</a>
+<a class="font-['Inter'] text-[0.6875rem] tracking-[0.2em] text-[#484848] hover:text-[#c6c6c7] transition-colors duration-500 uppercase py-2" href="#">Vogue Portfolio</a>
+</div>
+<div class="text-[#acabaa] font-['Inter'] text-[0.6875rem] tracking-[0.3em] uppercase opacity-50">
+            © Sean Image
+        </div>
+</footer>
+</main>
+<!-- Contextual FAB (Hidden on Mobile, now standard on tablet+) -->
+<div class="fixed bottom-8 right-8 z-50 md:block hidden">
+<button class="w-16 h-16 bg-tertiary text-on-tertiary-fixed rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform duration-300">
+<span class="material-symbols-outlined">shopping_bag</span>
+</button>
+</div>
+</body></html>
